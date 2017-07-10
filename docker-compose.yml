@@ -1,7 +1,7 @@
 version: "3.2"
 services:
   cloudNet:
-    image: chrros95/cloudNet:latest
+    image: chrros95/cloudnet:latest
     container_name: cloudNet
     cap_add:
       - NET_ADMIN
