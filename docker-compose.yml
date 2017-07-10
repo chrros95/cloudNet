@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.2"
 services:
   cloudNet:
     image: chrros95/cloudNet:latest
@@ -7,14 +7,8 @@ services:
       - NET_ADMIN
     devices:
       - /dev/net/tun
-    deploy:
-      restart_policy:
-        condition: on-failure
-        delay: 5s
-        max_attempts: 3
-        window: 120s
     expose:
       - "655"
     network_mode: "host"
     volumes:
-      - /var/service/cloudNet/volume:/etc/tinc
+      - ./volumes/tinc/:/etc/tinc
