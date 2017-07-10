@@ -24,5 +24,7 @@ Following an example to start a container:
         chrros95/cloudNet
 ```
 
+To use a different name for your VPN change the environment variable _NET_
+
 Any param hand over is passed to _tincd_.
 To start a different network than cloudNet pass the `-n <netname>`
