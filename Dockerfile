@@ -17,7 +17,7 @@ FROM alpine:3.6
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION
-ARG NET=cloudNet
+ENV NET=cloudNet
 LABEL org.label-schema.schema-version="1.0.0-rc.1" \
       org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.name="cloudNet" \
@@ -28,8 +28,7 @@ LABEL org.label-schema.schema-version="1.0.0-rc.1" \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vendor="7cb.de" \
       org.label-schema.version=$VERSION
-RUN apk update
-RUN apk add tinc=1.0.31-r1
+RUN apk update && apk add tinc=1.0.31-r1
 ADD healthcheck /healthcheck
 RUN chmod +x /healthcheck
 VOLUME /etc/tinc
