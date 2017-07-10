@@ -33,5 +33,5 @@ ADD healthcheck /healthcheck
 RUN chmod +x /healthcheck
 VOLUME /etc/tinc
 EXPOSE 655
-ENTRYPOINT tincd --logfile -n $NET
+ENTRYPOINT tincd --logfile -D -n $NET
 HEALTHCHECK CMD /healthcheck
